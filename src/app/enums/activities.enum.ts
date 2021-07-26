@@ -1,0 +1,21 @@
+export enum Activities {
+    CLIMB = 'Klimmen en klauteren',
+    SLIDE = 'Glijden',
+    SWING = 'Schommelen',
+    SPIN = 'Draaien en zwaaien',
+    BALANCE = 'Evenwicht',
+    FOOTBALL = 'Voetbal',
+    BASKETBALL = 'Basketbal',
+    SKATE_BLADE = 'Skaten en bladen',
+    CHILL = 'Chillen',
+    SPRING_RIDER = 'Veerfiguur',
+    DIVING_RACK = 'Duikelrek',
+    WIRE_CIRCUS = 'Draadcircus',
+    CABLEWAY = 'Kabelbaan',
+    WATERWHEEL = 'Waterrad',
+    WATER_LOCK = 'Sluis',
+    PICNIC_BENCH = 'Picknickbank',
+    BENCH = 'Gewone bank',
+    SAND = 'Zand',
+    HILL = 'Heuvel'
+}
