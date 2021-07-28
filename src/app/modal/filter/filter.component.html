@@ -1,0 +1,32 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-title>Filter</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismissModal()">
+        <ion-icon slot="icon-only" name="close-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-list-header>
+      Leeftijd ({{age.lower}} - {{age.upper}})
+    </ion-list-header>
+
+    <ion-item>
+      <ion-range [dualKnobs]="true" [pin]="false" min="2" max="16" step="1" snaps="true" [value]=age (ionChange)="ageChanged($event)">
+        <ion-icon size="small" slot="start" name="person-outline"></ion-icon>
+        <ion-icon slot="end" name="person-outline"></ion-icon>
+      </ion-range>
+    </ion-item>
+
+<!--     <ion-list-header>
+      Activiteiten
+    </ion-list-header>
+
+    <ion-item>
+      
+    </ion-item> -->
+  </ion-list>
+</ion-content>
