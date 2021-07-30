@@ -23,6 +23,10 @@
     </ion-toolbar>
   </ion-header>
 
+  <ion-text *ngIf="playgrounds.length === 0">
+    <h4 class="ion-padding">Geen speelpleinen gevonden (die aan de gekozen criteria voldoen).</h4>
+  </ion-text>
+
   <ion-card *ngFor="let playground of playgrounds">
     <img *ngIf="playground.image" src="assets/playgrounds/{{playground.image}}" />
     <ion-card-header>

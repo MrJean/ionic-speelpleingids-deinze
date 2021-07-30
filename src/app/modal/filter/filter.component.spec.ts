@@ -15,6 +15,12 @@ describe('FilterComponent', () => {
 
     fixture = TestBed.createComponent(ModalFilterComponent);
     component = fixture.componentInstance;
+    component.filterValues = {
+      age: {
+        lower: 2,
+        upper: 16
+      }
+    }
     fixture.detectChanges();
   }));
 

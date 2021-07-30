@@ -15,7 +15,11 @@ describe('PlaygroundsService', () => {
   });
 
   it('should be able to fetch playgrounds', () => {
-    expect(service.getPlaygrounds().length).toEqual(2);
+    expect(service.getPlaygrounds().length).toEqual(42);
+  });
+
+  it('should be able to fetch playgrounds using an age filter (2 years)', () => {
+    expect(service.getPlaygrounds({ age: { lower: 2, upper: 2}}).length).toEqual(2);
   });
 
   it('should be able to fetch a playground for a given index', () => {

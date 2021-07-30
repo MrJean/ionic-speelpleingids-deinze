@@ -3,6 +3,7 @@ import { IonicModule } from '@ionic/angular';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
 import { Tab1Page } from './tab1.page';
+import { MapActivityPipe } from '../pipes/map-activity.pipe';
 
 describe('Tab1Page', () => {
   let component: Tab1Page;
@@ -10,7 +11,7 @@ describe('Tab1Page', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [Tab1Page],
+      declarations: [Tab1Page, MapActivityPipe],
       imports: [IonicModule.forRoot(), ExploreContainerComponentModule]
     }).compileComponents();
 

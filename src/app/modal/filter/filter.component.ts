@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 
 @Component({
@@ -8,23 +8,30 @@ import { ModalController } from '@ionic/angular';
 })
 export class ModalFilterComponent implements OnInit {
 
-  age = { lower: 2, upper: 16 };
+  LOWER_AGE: 2 = 2;
+  UPPER_AGE: 16 = 16;
+
+  @Input() filterValues: any;
 
   constructor(private modalController: ModalController) { }
 
   ngOnInit() {}
 
-  dismissModal() {
+  applyFilter() {
     this.modalController.dismiss({
       dismissed: true,
-      filter: {
-        age: this.age
-      }
+      filter: this.filterValues
+    });
+  }
+
+  dismissModal() {
+    this.modalController.dismiss({
+      dismissed: true
     });
   }
 
   ageChanged($event: CustomEvent) {
-    this.age = $event.detail.value;
+    this.filterValues.age = $event.detail.value;
   }
 
 }

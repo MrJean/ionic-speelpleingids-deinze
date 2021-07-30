@@ -13,6 +13,12 @@ export class Tab1Page {
 
   playgrounds: Array<Playground> = this.playgroundsService.getPlaygrounds();
   currentFilterModal: HTMLIonModalElement = null;
+  currentFilterValues: any = {
+    age: {
+      lower: 2,
+      upper: 16
+    }
+  }
 
   constructor(private playgroundsService: PlaygroundsService, public modalController: ModalController) {
   }
@@ -20,7 +26,10 @@ export class Tab1Page {
   async presentFilterModal() {
     const filterModal = await this.modalController.create({
       component: ModalFilterComponent,
-      cssClass: 'my-custom-class'
+      cssClass: 'my-custom-class',
+      componentProps: {
+        'filterValues': this.currentFilterValues
+      }
     });
     this.currentFilterModal = filterModal;
     this.currentFilterModal.onDidDismiss().then(res => this.filterPlaygroundsList(res.data.filter));
@@ -28,7 +37,9 @@ export class Tab1Page {
   }
 
   private filterPlaygroundsList(filterValues) {
-    console.log(filterValues);
-    this.playgrounds = this.playgroundsService.getPlaygrounds();
+    if (filterValues) {
+      this.currentFilterValues = filterValues;
+      this.playgrounds = this.playgroundsService.getPlaygrounds(filterValues);
+    }
   }
 }
