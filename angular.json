@@ -21,8 +21,8 @@
             "tsConfig": "tsconfig.app.json",
             "assets": [
               {
-                "glob": "**/*",
-                "input": "_redirects",
+                "glob": "_redirects",
+                "input": "",
                 "output": ""
               },
               {
