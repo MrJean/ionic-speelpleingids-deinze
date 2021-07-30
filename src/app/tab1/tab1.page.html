@@ -1,5 +1,10 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+    <ion-buttons collapse="true" slot="end">
+      <ion-button (click)="presentFilterModal()">
+        <ion-icon slot="icon-only" name="filter-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
     <ion-title>
       Speelpleinen
     </ion-title>
@@ -9,9 +14,18 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
+      <ion-buttons collapse="true" slot="end">
+        <ion-button (click)="presentFilterModal()">
+          <ion-icon slot="icon-only" name="filter-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
       <ion-title size="large">Speelpleinen</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <ion-text *ngIf="playgrounds.length === 0">
+    <h4 class="ion-padding">Geen speelpleinen gevonden (die aan de gekozen criteria voldoen).</h4>
+  </ion-text>
 
   <ion-card *ngFor="let playground of playgrounds">
     <img *ngIf="playground.image" src="assets/playgrounds/{{playground.image}}" />
