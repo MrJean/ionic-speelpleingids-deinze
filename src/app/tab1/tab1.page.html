@@ -28,7 +28,7 @@
   </ion-text>
 
   <ion-card *ngFor="let playground of playgrounds">
-    <img *ngIf="playground.image" src="assets/playgrounds/{{playground.image}}" />
+    <!-- <img *ngIf="playground.image" src="assets/playgrounds/{{playground.image}}" /> -->
     <ion-card-header>
       <ion-card-subtitle>
         <ng-container *ngIf="playground.submunicipality; else municipality">{{ playground.submunicipality }}
@@ -41,9 +41,9 @@
       Richtleeftijd: <ng-container *ngIf="playground.targetAgeFrom && !playground.targetAgeTo; else dateRange">vanaf {{
         playground.targetAgeFrom }} jaar</ng-container>
       <ng-template #dateRange>{{ playground.targetAgeFrom }} - {{ playground.targetAgeTo }} jaar</ng-template>
-      <ul>
+<!--       <ul>
         <li *ngFor="let activity of playground.activities">{{ activity | mapActivity }}</li>
-      </ul>
+      </ul> -->
     </ion-card-content>
   </ion-card>
 

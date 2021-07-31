@@ -40,6 +40,7 @@ export class Tab1Page {
     if (filterValues) {
       this.currentFilterValues = filterValues;
       this.playgrounds = this.playgroundsService.getPlaygrounds(filterValues);
+      console.log(this.playgrounds.length);
     }
   }
 }
