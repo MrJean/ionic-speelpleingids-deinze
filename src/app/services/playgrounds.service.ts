@@ -19,9 +19,14 @@ export class PlaygroundsService {
     return playgrounds.find(playground => playground.id === id);
   }
 
-  private playgroundWithinAgeRange(targetAgeFrom, targetAgeTo, lowerAge, upperAge) {
-    return ((targetAgeFrom && !targetAgeTo) && lowerAge >= targetAgeFrom) ||
-      ((targetAgeFrom && targetAgeTo) && lowerAge >= targetAgeFrom && upperAge <= targetAgeTo)
+  private playgroundWithinAgeRange(targetAgeFrom, targetAgeTo, lowerAge, upperAge): boolean {
+    if (!targetAgeTo) {
+      return lowerAge <= targetAgeFrom && upperAge >= targetAgeFrom
+    } else {
+      return (lowerAge <= targetAgeFrom || upperAge >= targetAgeTo) // 1. Check if (part of) the playground is within age range
+        && (lowerAge <= targetAgeTo) // 2. Check if the playground to age overlaps lower age range
+        && (upperAge >= targetAgeFrom) // 3. Check if the playground from age overlaps upper age range
+    }
   }
 }
 
