@@ -20,8 +20,9 @@ export class PlaygroundsService {
   }
 
   private playgroundWithinAgeRange(targetAgeFrom, targetAgeTo, lowerAge, upperAge) {
-    return ((targetAgeFrom && !targetAgeTo) && lowerAge >= targetAgeFrom) ||
-      ((targetAgeFrom && targetAgeTo) && lowerAge >= targetAgeFrom && upperAge <= targetAgeTo)
+    return lowerAge <= targetAgeFrom || upperAge >= targetAgeTo;
+/*     return ((targetAgeFrom && !targetAgeTo) && lowerAge >= targetAgeFrom) ||
+      ((targetAgeFrom && targetAgeTo) && lowerAge >= targetAgeFrom && upperAge <= targetAgeTo) */
   }
 }
 
