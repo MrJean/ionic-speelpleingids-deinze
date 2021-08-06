@@ -30,8 +30,9 @@ export class ModalFilterComponent implements OnInit {
     });
   }
 
-  ageChanged($event: CustomEvent) {
-    this.filterValues.age = $event.detail.value;
+  ageChanged($event: Event) {
+    // https://forum.ionicframework.com/t/argument-of-type-event-is-not-assignable-to-parameter-of-type-customevent-any/206639
+    this.filterValues.age = ($event as CustomEvent).detail.value;
   }
 
 }

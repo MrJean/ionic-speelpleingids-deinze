@@ -7,6 +7,7 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
 
 import { Tab1PageRoutingModule } from './tab1-routing.module';
 import { MapActivityPipe } from '../pipes/map-activity.pipe';
+import { ModalFilterComponent } from '../modal/filter/filter.component';
 
 @NgModule({
   imports: [
@@ -16,6 +17,6 @@ import { MapActivityPipe } from '../pipes/map-activity.pipe';
     ExploreContainerComponentModule,
     Tab1PageRoutingModule
   ],
-  declarations: [Tab1Page, MapActivityPipe]
+  declarations: [Tab1Page, ModalFilterComponent, MapActivityPipe]
 })
 export class Tab1PageModule {}
