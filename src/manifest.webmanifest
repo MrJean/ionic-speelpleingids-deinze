@@ -1,7 +1,7 @@
 {
   "name": "Speelpleingids Deinze",
   "short_name": "Speel Deinze",
-  "description": "This application is an unofficial playground guide for the city of Deinze (Flanders, Belgium).",
+  "description": "Speelpleingids van Stad Deinze (officieus).",
   "theme_color": "#e6f3f5",
   "background_color": "#fafafa",
   "display": "standalone",
