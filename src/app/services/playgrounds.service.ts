@@ -87,7 +87,7 @@ const playgrounds: Array<Playground> = [
     submunicipality: 'Petegem',
     targetAgeFrom: 3,
     targetAgeTo: 12,
-    activities: ['SLIDE', 'BENCH', 'SWING', 'SAND', 'SPRING_RIDER']
+    activities: ['SLIDE', 'BENCH', 'SWING', 'SAND', 'SPRING_RIDER', 'CLIMB']
   },
   {
     id: 8,
