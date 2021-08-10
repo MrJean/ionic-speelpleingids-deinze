@@ -24,3 +24,11 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+/* Custom app styles */
+h2.pg-h2 {
+    margin-top: 1rem;
+    padding: 1rem 0;
+    color: var(--ion-text-color);
+    border-top: 1px solid #9c9c9c;
+}

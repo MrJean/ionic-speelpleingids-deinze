@@ -27,24 +27,23 @@
     <h4 class="ion-padding">Geen speelpleinen gevonden (die aan de gekozen criteria voldoen).</h4>
   </ion-text>
 
-  <ion-card *ngFor="let playground of playgrounds">
-    <!-- <img *ngIf="playground.image" src="assets/playgrounds/{{playground.image}}" /> -->
-    <ion-card-header>
-      <ion-card-subtitle>
-        <ng-container *ngIf="playground.submunicipality; else municipality">{{ playground.submunicipality }}
-        </ng-container>
-        <ng-template #municipality>{{ playground.municipality }}</ng-template>
-      </ion-card-subtitle>
-      <ion-card-title>{{ playground.name }}</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      Richtleeftijd: <ng-container *ngIf="playground.targetAgeFrom && !playground.targetAgeTo; else dateRange">vanaf {{
-        playground.targetAgeFrom }} jaar</ng-container>
-      <ng-template #dateRange>{{ playground.targetAgeFrom }} - {{ playground.targetAgeTo }} jaar</ng-template>
-<!--       <ul>
-        <li *ngFor="let activity of playground.activities">{{ activity | mapActivity }}</li>
-      </ul> -->
-    </ion-card-content>
-  </ion-card>
+
+  <ion-list>
+    <ion-item *ngFor="let playground of playgrounds" [routerLink]="['/playground', playground.id]">
+      <ion-label>
+        <h2>
+          <ng-container *ngIf="playground.submunicipality; else municipality">{{ playground.submunicipality }}
+          </ng-container>
+          <ng-template #municipality>{{ playground.municipality }}</ng-template>
+        </h2>
+        <h1>{{ playground.name }}</h1>
+        <p>
+          Richtleeftijd: <ng-container *ngIf="playground.targetAgeFrom && !playground.targetAgeTo; else dateRange">vanaf {{
+            playground.targetAgeFrom }} jaar</ng-container>
+          <ng-template #dateRange>{{ playground.targetAgeFrom }} - {{ playground.targetAgeTo }} jaar</ng-template>
+        </p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
 
 </ion-content>
