@@ -37,7 +37,9 @@ const playgrounds: Array<Playground> = [
     name: 'Skatepark Briel',
     municipality: 'Deinze',
     targetAgeFrom: 6,
-    activities: ['SKATE_BLADE', 'CHILL', 'BENCH']
+    activities: ['SKATE_BLADE', 'CHILL', 'BENCH'],
+    lat: 50.983453282460154,
+    lng: 3.525145436764265
   },
   {
     id: 2,
@@ -45,7 +47,9 @@ const playgrounds: Array<Playground> = [
     municipality: 'Deinze',
     targetAgeFrom: 3,
     targetAgeTo: 12,
-    activities: ['CLIMB', 'CHILL', 'PICNIC_BENCH', 'SPIN', 'WATERWHEEL', 'BENCH', 'BALANCE', 'WATER_LOCK', 'SAND']
+    activities: ['CLIMB', 'CHILL', 'PICNIC_BENCH', 'SPIN', 'WATERWHEEL', 'BENCH', 'BALANCE', 'WATER_LOCK', 'SAND'],
+    lat: 50.98412655217438,
+    lng: 3.524671900837458
   },
   {
     id: 3,
@@ -61,7 +65,9 @@ const playgrounds: Array<Playground> = [
     municipality: 'Deinze',
     targetAgeFrom: 3,
     targetAgeTo: 12,
-    activities: ['CLIMB', 'BALANCE', 'SLIDE', 'SAND', 'SWING', 'BENCH']
+    activities: ['CLIMB', 'BALANCE', 'SLIDE', 'SAND', 'SWING', 'BENCH'],
+    lat: 50.98916778340814,
+    lng: 3.535499357466702
   },
   {
     id: 5,
@@ -78,7 +84,9 @@ const playgrounds: Array<Playground> = [
     submunicipality: 'Petegem',
     targetAgeFrom: 3,
     targetAgeTo: 12,
-    activities: ['CLIMB', 'SPRING_RIDER', 'SLIDE', 'BENCH', 'SWING', 'SAND']
+    activities: ['CLIMB', 'SPRING_RIDER', 'SLIDE', 'BENCH', 'SWING', 'SAND'],
+    lat: 50.97561263344486,
+    lng: 3.54641228900224
   },
   {
     id: 7,
@@ -96,7 +104,9 @@ const playgrounds: Array<Playground> = [
     submunicipality: 'Petegem',
     targetAgeFrom: 3,
     targetAgeTo: 8,
-    activities: ['BALANCE', 'PICNIC_BENCH']
+    activities: ['BALANCE', 'PICNIC_BENCH'],
+    lat: 50.97331150835841,
+    lng: 3.534070852769791
   },
   {
     id: 9,
@@ -105,7 +115,9 @@ const playgrounds: Array<Playground> = [
     submunicipality: 'Petegem',
     targetAgeFrom: 6,
     targetAgeTo: 12,
-    activities: ['CLIMB', 'DIVING_RACK', 'SLIDE', 'BENCH', 'SWING', 'SAND']
+    activities: ['CLIMB', 'DIVING_RACK', 'SLIDE', 'BENCH', 'SWING', 'SAND'],
+    lat: 50.96981140330136,
+    lng: 3.538226508410422
   },
   {
     id: 10,
@@ -132,7 +144,9 @@ const playgrounds: Array<Playground> = [
     submunicipality: 'Petegem',
     targetAgeFrom: 3,
     targetAgeTo: 16,
-    activities: ['CLIMB', 'FOOTBALL', 'SAND', 'SLIDE', 'SPRING_RIDER', 'SWING', 'BENCH']
+    activities: ['CLIMB', 'FOOTBALL', 'SAND', 'SLIDE', 'SPRING_RIDER', 'SWING', 'BENCH'],
+    lat: 50.96509222729424,
+    lng: 3.5322214305540434
   },
   {
     id: 13,

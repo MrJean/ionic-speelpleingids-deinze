@@ -7,4 +7,6 @@ export interface Playground {
     targetAgeFrom?: number;
     targetAgeTo?: number;
     activities?: Array<string>;
+    lat?: number;
+    lng?: number;
 }

@@ -16,13 +16,19 @@
       <ion-card-title>{{ playground.name }}</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      Richtleeftijd: <ng-container *ngIf="playground.targetAgeFrom && !playground.targetAgeTo; else dateRange">vanaf {{
-        playground.targetAgeFrom }} jaar</ng-container>
-      <ng-template #dateRange>{{ playground.targetAgeFrom }} - {{ playground.targetAgeTo }} jaar</ng-template>
+      <p>
+        Richtleeftijd: <ng-container *ngIf="playground.targetAgeFrom && !playground.targetAgeTo; else dateRange">vanaf
+          {{
+          playground.targetAgeFrom }} jaar</ng-container>
+        <ng-template #dateRange>{{ playground.targetAgeFrom }} - {{ playground.targetAgeTo }} jaar</ng-template>
+      </p>
+      <p *ngIf="playground.lat && playground.lng">
+        <a target="_blank" rel="noopener" href="https://www.google.be/maps/search/{{playground.lat}},{{playground.lng}}" title="Bekijk {{ playground.name }} op Google Maps">Bekijk op Google Maps</a>
+      </p>
 
       <h2 class="pg-h2">Activiteiten</h2>
-      <ion-chip *ngFor="let activity of playground.activities">
-        <ion-label color="secondary">{{ activity | mapActivity }}</ion-label>
+      <ion-chip outline color="secondary" *ngFor="let activity of playground.activities">
+        <ion-label color="primary">{{ activity | mapActivity }}</ion-label>
       </ion-chip>
     </ion-card-content>
   </ion-card>
