@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{playground?.name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngIf="playground">
+    <img *ngIf="playground.image" src="assets/playgrounds/{{playground.image}}" />
+    <ion-card-header>
+      <ion-card-subtitle>
+        <ng-container *ngIf="playground.submunicipality; else municipality">{{ playground.submunicipality }}
+        </ng-container>
+        <ng-template #municipality>{{ playground.municipality }}</ng-template>
+      </ion-card-subtitle>
+      <ion-card-title>{{ playground.name }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Richtleeftijd: <ng-container *ngIf="playground.targetAgeFrom && !playground.targetAgeTo; else dateRange">vanaf {{
+        playground.targetAgeFrom }} jaar</ng-container>
+      <ng-template #dateRange>{{ playground.targetAgeFrom }} - {{ playground.targetAgeTo }} jaar</ng-template>
+
+      <h2 class="pg-h2">Activiteiten</h2>
+      <ion-chip *ngFor="let activity of playground.activities">
+        <ion-label color="secondary">{{ activity | mapActivity }}</ion-label>
+      </ion-chip>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

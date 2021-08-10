@@ -17,6 +17,6 @@ import { ModalFilterComponent } from '../modal/filter/filter.component';
     ExploreContainerComponentModule,
     Tab1PageRoutingModule
   ],
-  declarations: [Tab1Page, ModalFilterComponent, MapActivityPipe]
+  declarations: [Tab1Page, ModalFilterComponent]
 })
 export class Tab1PageModule {}
