@@ -22,14 +22,18 @@
           playground.targetAgeFrom }} jaar</ng-container>
         <ng-template #dateRange>{{ playground.targetAgeFrom }} - {{ playground.targetAgeTo }} jaar</ng-template>
       </p>
-      <p *ngIf="playground.lat && playground.lng">
-        <a target="_blank" rel="noopener" href="https://www.google.be/maps/search/{{playground.lat}},{{playground.lng}}" title="Bekijk {{ playground.name }} op Google Maps">Bekijk op Google Maps</a>
-      </p>
 
       <h2 class="pg-h2">Activiteiten</h2>
-      <ion-chip outline color="secondary" *ngFor="let activity of playground.activities">
-        <ion-label color="primary">{{ activity | mapActivity }}</ion-label>
+      <ion-chip outline *ngFor="let activity of playground.activities">
+        <ion-label>{{ activity | mapActivity }}</ion-label>
       </ion-chip>
+
+      <ng-container *ngIf="playground.lat && playground.lng">
+        <h2 class="pg-h2">Locatie</h2>
+        <p>
+          <a target="_blank" rel="noopener" href="https://www.google.be/maps/search/{{playground.lat}},{{playground.lng}}" title="Bekijk {{ playground.name }} op Google Maps">Bekijk op Google Maps</a>
+        </p>
+      </ng-container>
     </ion-card-content>
   </ion-card>
 </ion-content>
