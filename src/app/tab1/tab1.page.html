@@ -29,7 +29,7 @@
 
 
   <ion-list>
-    <ion-item *ngFor="let playground of playgrounds" [routerLink]="['/playground', playground.id]">
+    <ion-item detail *ngFor="let playground of playgrounds" [routerLink]="['/playground', playground.id]">
       <ion-label>
         <h2>
           <ng-container *ngIf="playground.submunicipality; else municipality">{{ playground.submunicipality }}

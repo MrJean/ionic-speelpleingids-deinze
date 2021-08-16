@@ -34,9 +34,7 @@
       <ng-container *ngIf="playground.lat && playground.lng">
         <h2 class="pg-h2">Locatie</h2>
         <ion-img *ngIf="playground.imageMap" [src]="'assets/playgrounds/' + playground.imageMap"></ion-img>
-        <p>
-          <a target="_blank" rel="noopener" href="https://www.google.be/maps/search/{{playground.lat}},{{playground.lng}}" title="Bekijk {{ playground.name }} op Google Maps">Bekijk op Google Maps</a>
-        </p>
+        <ion-button size="small" expand="block" color="primary" target="_blank" role="noopener" href="https://www.google.be/maps/search/{{playground.lat}},{{playground.lng}}" title="Bekijk {{ playground.name }} op Google Maps">Bekijk op Google Maps</ion-button>
       </ng-container>
     </ion-card-content>
   </ion-card>
