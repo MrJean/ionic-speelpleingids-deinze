@@ -1,19 +1,22 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button [text]="'Terug'" defaultHref="/"></ion-back-button>
+    </ion-buttons>
     <ion-title>{{playground?.name}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-card *ngIf="playground">
-    <img *ngIf="playground.image" src="assets/playgrounds/{{playground.image}}" />
+    <ion-img *ngIf="playground.image" [src]="'assets/playgrounds/' + playground.image"></ion-img>
     <ion-card-header>
-      <ion-card-subtitle>
+      <ion-card-subtitle color="secondary">
         <ng-container *ngIf="playground.submunicipality; else municipality">{{ playground.submunicipality }}
         </ng-container>
         <ng-template #municipality>{{ playground.municipality }}</ng-template>
       </ion-card-subtitle>
-      <ion-card-title>{{ playground.name }}</ion-card-title>
+      <ion-card-title color="primary">{{ playground.name }}</ion-card-title>
     </ion-card-header>
     <ion-card-content>
       <p>
@@ -30,6 +33,7 @@
 
       <ng-container *ngIf="playground.lat && playground.lng">
         <h2 class="pg-h2">Locatie</h2>
+        <ion-img *ngIf="playground.imageMap" [src]="'assets/playgrounds/' + playground.imageMap"></ion-img>
         <p>
           <a target="_blank" rel="noopener" href="https://www.google.be/maps/search/{{playground.lat}},{{playground.lng}}" title="Bekijk {{ playground.name }} op Google Maps">Bekijk op Google Maps</a>
         </p>
