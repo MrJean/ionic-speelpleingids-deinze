@@ -2,7 +2,7 @@
   "name": "Speelpleingids Deinze",
   "short_name": "Speel Deinze",
   "description": "Speelpleingids van Stad Deinze (officieus).",
-  "theme_color": "#e6f3f5",
+  "theme_color": "#4a569e",
   "background_color": "#fafafa",
   "display": "standalone",
   "orientation": "portrait",
