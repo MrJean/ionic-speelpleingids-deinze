@@ -1,6 +1,7 @@
 export interface Playground {
     id: number;
     image?: string;
+    imageMap?: string;
     name: string;
     municipality?: string;
     submunicipality?: string;

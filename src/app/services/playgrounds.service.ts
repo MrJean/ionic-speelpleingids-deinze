@@ -33,7 +33,8 @@ export class PlaygroundsService {
 const playgrounds: Array<Playground> = [
   {
     id: 1,
-    image: 'playground-175144.jpg',
+    image: '1.webp',
+    imageMap: '1-m.webp',
     name: 'Skatepark Briel',
     municipality: 'Deinze',
     targetAgeFrom: 6,
@@ -43,6 +44,8 @@ const playgrounds: Array<Playground> = [
   },
   {
     id: 2,
+    image: '2.webp',
+    imageMap: '2-m.webp',
     name: 'Kaandelpark',
     municipality: 'Deinze',
     targetAgeFrom: 3,
@@ -53,6 +56,8 @@ const playgrounds: Array<Playground> = [
   },
   {
     id: 3,
+    image: '3.webp',
+    imageMap: '3-m.webp',
     name: 'Biesbulckstraat',
     municipality: 'Deinze',
     targetAgeFrom: 3,
@@ -63,6 +68,8 @@ const playgrounds: Array<Playground> = [
   },
   {
     id: 4,
+    image: '4.webp',
+    imageMap: '4-m.webp',
     name: 'Ten Bosse',
     municipality: 'Deinze',
     targetAgeFrom: 3,
@@ -73,6 +80,8 @@ const playgrounds: Array<Playground> = [
   },
   {
     id: 5,
+    image: '5.webp',
+    imageMap: '5-m.webp',
     name: 'Rekkelinge - Désiré Delcroixstraat',
     municipality: 'Deinze',
     targetAgeFrom: 6,
@@ -83,6 +92,8 @@ const playgrounds: Array<Playground> = [
   },
   {
     id: 6,
+    image: '6.webp',
+    imageMap: '6-m.webp',
     name: 'Toekomststraat',
     municipality: 'Deinze',
     submunicipality: 'Petegem',
@@ -94,6 +105,8 @@ const playgrounds: Array<Playground> = [
   },
   {
     id: 7,
+    image: '7.webp',
+    imageMap: '7-m.webp',
     name: 'Winterlaan',
     municipality: 'Deinze',
     submunicipality: 'Petegem',
@@ -105,6 +118,8 @@ const playgrounds: Array<Playground> = [
   },
   {
     id: 8,
+    image: '8.webp',
+    imageMap: '8-m.webp',
     name: 'Koningin Astridstraat - Driesstraat',
     municipality: 'Deinze',
     submunicipality: 'Petegem',
@@ -116,6 +131,8 @@ const playgrounds: Array<Playground> = [
   },
   {
     id: 9,
+    image: '9.webp',
+    imageMap: '9-m.webp',
     name: 'Sleepstraat',
     municipality: 'Deinze',
     submunicipality: 'Petegem',
@@ -127,6 +144,8 @@ const playgrounds: Array<Playground> = [
   },
   {
     id: 10,
+    image: '10.webp',
+    imageMap: '10-m.webp',
     name: 'Nieuwgoedlaan 1',
     municipality: 'Deinze',
     submunicipality: 'Petegem',
@@ -138,6 +157,8 @@ const playgrounds: Array<Playground> = [
   },
   {
     id: 11,
+    image: '11.webp',
+    imageMap: '11-m.webp',
     name: 'Nieuwgoedlaan 2',
     municipality: 'Deinze',
     submunicipality: 'Petegem',
