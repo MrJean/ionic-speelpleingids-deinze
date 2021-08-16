@@ -27,6 +27,11 @@
     <h4 class="ion-padding">Geen speelpleinen gevonden (die aan de gekozen criteria voldoen).</h4>
   </ion-text>
 
+  <ion-text class="ion-padding notification" *ngIf="updateAvailablePromptUpdate$ | async">
+    <p>Er is een update beschikbaar voor de applicatie. Wil je deze nu updaten?</p>
+    <ion-button size="small" (click)="updateApplication()">Update de applicatie</ion-button>
+  </ion-text>
+
 
   <ion-list>
     <ion-item detail *ngFor="let playground of playgrounds" [routerLink]="['/playground', playground.id]">

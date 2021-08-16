@@ -3,6 +3,7 @@ import { Playground } from '../interfaces/playground.interface';
 import { PlaygroundsService } from '../services/playgrounds.service';
 import { ModalController } from '@ionic/angular';
 import { ModalFilterComponent } from '../modal/filter/filter.component';
+import { CheckForUpdateService } from '../services/check-for-update.service';
 
 @Component({
   selector: 'app-tab1',
@@ -11,6 +12,7 @@ import { ModalFilterComponent } from '../modal/filter/filter.component';
 })
 export class Tab1Page {
 
+  updateAvailablePromptUpdate$ = this.checkForUpdateService.updateAvailablePromptUpdate$;
   playgrounds: Array<Playground> = this.playgroundsService.getPlaygrounds();
   currentFilterModal: HTMLIonModalElement = null;
   currentFilterValues: any = {
@@ -20,7 +22,7 @@ export class Tab1Page {
     }
   }
 
-  constructor(private playgroundsService: PlaygroundsService, public modalController: ModalController) {
+  constructor(private checkForUpdateService: CheckForUpdateService, private playgroundsService: PlaygroundsService, public modalController: ModalController) {
   }
 
   async presentFilterModal() {
@@ -34,6 +36,10 @@ export class Tab1Page {
     this.currentFilterModal = filterModal;
     this.currentFilterModal.onDidDismiss().then(res => this.filterPlaygroundsList(res.data.filter));
     return await filterModal.present();
+  }
+
+  updateApplication() {
+    this.checkForUpdateService.updateApplication();
   }
 
   private filterPlaygroundsList(filterValues) {

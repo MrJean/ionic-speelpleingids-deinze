@@ -8,6 +8,7 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
 import { Tab1PageRoutingModule } from './tab1-routing.module';
 import { MapActivityPipe } from '../pipes/map-activity.pipe';
 import { ModalFilterComponent } from '../modal/filter/filter.component';
+import { CheckForUpdateService } from '../services/check-for-update.service';
 
 @NgModule({
   imports: [
@@ -17,6 +18,7 @@ import { ModalFilterComponent } from '../modal/filter/filter.component';
     ExploreContainerComponentModule,
     Tab1PageRoutingModule
   ],
+  providers: [CheckForUpdateService],
   declarations: [Tab1Page, ModalFilterComponent]
 })
 export class Tab1PageModule {}
