@@ -5,3 +5,12 @@ h1 {
 h2 {
     color: var(--ion-color-secondary);
 }
+
+.notification {
+    background: var(--ion-color-tertiary-tint);
+    display: inline-block;
+
+    p {
+        margin: .5em 0 1em;
+    }
+}
