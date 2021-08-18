@@ -6,7 +6,6 @@ import { Tab1Page } from './tab1.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
 import { Tab1PageRoutingModule } from './tab1-routing.module';
-import { MapActivityPipe } from '../pipes/map-activity.pipe';
 import { ModalFilterComponent } from '../modal/filter/filter.component';
 import { CheckForUpdateService } from '../services/check-for-update.service';
 

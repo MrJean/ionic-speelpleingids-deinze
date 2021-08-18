@@ -22,16 +22,17 @@
       </ion-range>
     </ion-item>
 
-    <!--     <ion-list-header>
+    <ion-list-header>
       Activiteiten
     </ion-list-header>
-
-    <ion-item>
-      
-    </ion-item> -->
-
-    <ion-item>
-      <ion-button size="default" (click)="applyFilter()">Criteria toepassen</ion-button>
+    <ion-item *ngFor="let activity of filterValues.activities">
+      <ion-label>{{activity.label}}</ion-label>
+      <ion-checkbox slot="end" [(ngModel)]="activity.isChecked"></ion-checkbox>
     </ion-item>
   </ion-list>
 </ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-button expand="block" size="default" (click)="applyFilter()">Criteria toepassen</ion-button>
+  </ion-toolbar>
+</ion-footer>
