@@ -13,7 +13,7 @@ export class ModalFilterComponent implements OnInit {
 
   @Input() filterValues: any;
 
-  constructor(private modalController: ModalController) { }
+  constructor(private modalController: ModalController) {}
 
   ngOnInit() {}
 

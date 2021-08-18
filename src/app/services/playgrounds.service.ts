@@ -9,10 +9,18 @@ export class PlaygroundsService {
   constructor() { }
 
   getPlaygrounds(filter?: any): Array<Playground> {
+    let playgroundsToReturn = playgrounds;
+
     if (filter) {
-      return playgrounds.filter(playground => this.playgroundWithinAgeRange(playground.targetAgeFrom, playground.targetAgeTo, filter.age.lower, filter.age.upper))
+      const activityKeys = filter.activities.filter(activity => activity.isChecked).map(activity => activity.key);
+
+      playgroundsToReturn = playgroundsToReturn.filter(playground => this.playgroundWithinAgeRange(playground.targetAgeFrom, playground.targetAgeTo, filter.age.lower, filter.age.upper));
+
+      if (activityKeys.length > 0) {
+        playgroundsToReturn = playgroundsToReturn.filter(playground => this.playgroundContainsActivities(playground.activities, activityKeys));
+      }
     }
-    return playgrounds;
+    return playgroundsToReturn;
   }
 
   getPlayground(id: number): Playground {
@@ -27,6 +35,10 @@ export class PlaygroundsService {
         && (lowerAge <= targetAgeTo) // 2. Check if the playground to age overlaps lower age range
         && (upperAge >= targetAgeFrom) // 3. Check if the playground from age overlaps upper age range
     }
+  }
+
+  private playgroundContainsActivities(playgroundActivities, filterActivities): boolean {
+    return playgroundActivities.filter(playgroundActivity => filterActivities.includes(playgroundActivity)).length > 0;
   }
 }
 

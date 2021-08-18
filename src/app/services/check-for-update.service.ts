@@ -9,7 +9,6 @@ export class CheckForUpdateService {
   updateAvailablePromptUpdate$: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
   constructor(appRef: ApplicationRef, private updates: SwUpdate) {
-    console.log('CheckForUpdateService constructor');
     // Allow the app to stabilize first, before starting polling for updates with `interval()`.
     const appIsStable$ = appRef.isStable.pipe(first(isStable => isStable === true));
     const everySixHours$ = interval(6 * 60 * 60 * 1000);
@@ -19,15 +18,14 @@ export class CheckForUpdateService {
   }
 
   updateApplication(): void {
-    console.log('update application');
     this.updateAvailablePromptUpdate$.next(false);
     this.updates.activateUpdate().then(() => document.location.reload());
   }
 
   private listenForAvailableUpdate(): void {
     this.updates.available.subscribe(event => {
-      console.log('current version is', event.current);
-      console.log('available version is', event.available);
+      // console.log('current version is', event.current);
+      // console.log('available version is', event.available);
       this.updateAvailablePromptUpdate$.next(true);
     });
   }
