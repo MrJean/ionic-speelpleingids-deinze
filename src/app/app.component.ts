@@ -29,12 +29,8 @@ export class AppComponent {
 
   @HostListener('window:appinstalled', ['$event'])
   windowAppInstalled(event: any) {
-    // Hide the app-provided install promotion
-    // this.hideInstallPromotion();
     // Clear the deferredPrompt so it can be garbage collected
     this.deferredPrompt = null;
-    // Optionally, send analytics event to indicate successful install
-    console.log('PWA was installed');
   }
 
   private async triggerInstallPrompt() {
@@ -74,6 +70,5 @@ export class AppComponent {
     await toast.present();
 
     const { role } = await toast.onDidDismiss();
-    console.log('onDidDismiss resolved with role', role);
   }
 }
