@@ -11,9 +11,14 @@ export class AppComponent {
 
   constructor() {}
 
-  @HostListener('beforeinstallprompt', ['$event'])
+  @HostListener('window:beforeinstallprompt', ['$event'])
   windowBeforeInstallPrompt(event: any) {
-    console.log(event);
+    console.log('windowBeforeInstallPrompt', event);
+  }
+
+  @HostListener('beforeinstallprompt', ['$event'])
+  beforeInstallPrompt(event: any) {
+    console.log('beforeInstallPrompt', event);
     // Prevent the mini-infobar from appearing on mobile
     event.preventDefault();
     // Stash the event so it can be triggered later.
